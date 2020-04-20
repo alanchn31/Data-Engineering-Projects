@@ -1,0 +1,2 @@
+The code in this repository scrapes from: "http://books.toscrape.com/".  
+It then ingests the data into a MongoDB database hosted on localhost, port 27017, into a database called "books" and collection called "titles".
