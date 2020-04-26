@@ -4,10 +4,10 @@
 3. Logical Data Modelling
 
 ## Important Feature of RDBMS:
-**Atomicity** - Whole transaction or nothing is processed
-**Consistency** - Only transactions abiding by constraints & rules is written into database
-**Isolation** - Transactions proceed independently and securely
-**Durability** - Once transactions are committed, they remain committed
+**Atomicity** - Whole transaction or nothing is processed  
+**Consistency** - Only transactions abiding by constraints & rules is written into database  
+**Isolation** - Transactions proceed independently and securely  
+**Durability** - Once transactions are committed, they remain committed  
 
 ## When to use Relational Database?
 ### Advantages of Using a Relational Database
