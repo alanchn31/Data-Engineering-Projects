@@ -9,7 +9,7 @@ This repo provides the ETL pipeline, to populate the sparkifydb database.
 ---
 * For the schema design, the STAR schema is used as it simplifies queries and provides fast aggregations of data.
 
-![schema.PNG]
+![Schema](schema.PNG)
 
 * For the ETL pipeline, Python is used as it contains libraries such as pandas, that simplifies data manipulation. It also allows connection to Postgres Database.
 
