@@ -11,3 +11,4 @@
 * Next, run ```scrapy crawl books``` from the scrapy project folder "books"
 * You can now confirm that the data was stored on MongoDB in books database using MongoDB Compass
 
+![Books](books.PNG)
