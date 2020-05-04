@@ -7,7 +7,7 @@ This repo provides the ETL pipeline, to populate the sparkifydb database in AWS 
 
 ## Why Redshift?
 --- 
-* Redshift is a fully managed, cloud-based, petabyte-scale data warehouse service by Amazon Web Services (AWS). It is an efficient solution to collect and store all data and enables analysis using various business intelligence tools to acquire new insights for businesses and their customers.
+* Redshift is a fully managed, cloud-based, petabyte-scale data warehouse service by Amazon Web Services (AWS). It is an efficient solution to collect and store all data and enables analysis using various business intelligence tools to acquire new insights for businesses and their customers.  
 ![Redshift](screenshots/redshift.PNG) 
 
 ## Database Design
