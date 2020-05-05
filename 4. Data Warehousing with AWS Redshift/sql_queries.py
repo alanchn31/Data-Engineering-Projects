@@ -21,23 +21,23 @@ staging_events_table_create= (
    """
    CREATE TABLE staging_events_table (
       stagingEventId bigint IDENTITY(0,1) PRIMARY KEY,
-      artist VARCHAR,
-      auth VARCHAR,
-      firstName VARCHAR,
-      gender VARCHAR(1),
+      artist VARCHAR(500),
+      auth VARCHAR(20),
+      firstName VARCHAR(500),
+      gender CHAR(1),
       itemInSession SMALLINT,
-      lastName VARCHAR,
+      lastName VARCHAR(500),
       length NUMERIC,
-      level VARCHAR(5),
-      location VARCHAR,
-      method VARCHAR(6),
-      page VARCHAR,
+      level VARCHAR(10),
+      location VARCHAR(500),
+      method VARCHAR(20),
+      page VARCHAR(500),
       registration NUMERIC,
       sessionId SMALLINT,
       song VARCHAR,
       status SMALLINT,
       ts BIGINT,
-      userAgent VARCHAR,
+      userAgent VARCHAR(500),
       userId SMALLINT
     )
    """
@@ -48,13 +48,13 @@ staging_songs_table_create = (
    CREATE TABLE staging_songs_table (
       staging_song_id bigint IDENTITY(0,1) PRIMARY KEY,
       num_songs INTEGER NOT NULL,
-      artist_id VARCHAR NOT NULL,
+      artist_id VARCHAR(20) NOT NULL,
       artist_latitude NUMERIC,
       artist_longitude NUMERIC,
-      artist_location VARCHAR,
-      artist_name VARCHAR NOT NULL,
-      song_id VARCHAR NOT NULL,
-      title VARCHAR NOT NULL,
+      artist_location VARCHAR(500),
+      artist_name VARCHAR(500) NOT NULL,
+      song_id VARCHAR(20) NOT NULL,
+      title VARCHAR(500) NOT NULL,
       duration NUMERIC NOT NULL,
       year SMALLINT NOT NULL
    );
@@ -64,15 +64,15 @@ staging_songs_table_create = (
 songplay_table_create = (
    """
    CREATE TABLE songplays (
-      songplay_id bigint IDENTITY(0,1) PRIMARY KEY, 
-      start_time bigint REFERENCES time(start_time) distkey, 
-      user_id int REFERENCES users(user_id), 
-      level varchar, 
-      song_id varchar REFERENCES songs(song_id), 
-      artist_id varchar REFERENCES artists(artist_id), 
-      session_id int, 
-      location varchar, 
-      user_agent varchar
+      songplay_id BIGINT IDENTITY(0,1) PRIMARY KEY, 
+      start_time BIGINT REFERENCES time(start_time) distkey, 
+      user_id SMALLINT REFERENCES users(user_id), 
+      level VARCHAR(10), 
+      song_id VARCHAR(20) REFERENCES songs(song_id), 
+      artist_id VARCHAR(20) REFERENCES artists(artist_id), 
+      session_id SMALLINT, 
+      location VARCHAR(500), 
+      user_agent VARCHAR(500)
    )
    sortkey(level, start_time);
    """
@@ -81,11 +81,11 @@ songplay_table_create = (
 user_table_create = (
    """
    CREATE TABLE users (
-      user_id int PRIMARY KEY, 
-      first_name varchar,
-      last_name varchar,
-      gender varchar,
-      level varchar
+      user_id INT PRIMARY KEY, 
+      first_name VARCHAR(500),
+      last_name VARCHAR(500),
+      gender CHAR(1),
+      level VARCHAR(10) NOT NULL
    )
    diststyle all
    sortkey(level, gender, first_name, last_name);
@@ -95,11 +95,11 @@ user_table_create = (
 song_table_create = (
    """
    CREATE TABLE songs (
-      song_id varchar PRIMARY KEY, 
-      title varchar,
-      artist_id varchar,
-      year int,
-      duration float
+      song_id VARCHAR(20) PRIMARY KEY, 
+      title VARCHAR(500) NOT NULL,
+      artist_id VARCHAR(20) NOT NULL,
+      year SMALLINT NOT NULL,
+      duration NUMERIC NOT NULL
    )
    diststyle all
    sortkey(year, title, duration);
@@ -109,11 +109,11 @@ song_table_create = (
 artist_table_create = (
    """
    CREATE TABLE artists (
-      artist_id varchar PRIMARY KEY, 
-      name varchar,
-      location varchar,
-      latitude float,
-      longitude float
+      artist_id VARCHAR(20) PRIMARY KEY, 
+      name VARCHAR(500) NOT NULL,
+      location VARCHAR(500),
+      latitude NUMERIC,
+      longitude NUMERIC
    )
    diststyle all
    sortkey(name, location);
@@ -124,12 +124,12 @@ time_table_create = (
    """
    CREATE TABLE time (
       start_time timestamp PRIMARY KEY distkey, 
-      hour int,
-      day int,
-      week int,
-      month int,
-      year int,
-      weekday int
+      hour SMALLINT NOT NULL,
+      day SMALLINT NOT NULL,
+      week SMALLINT NOT NULL,
+      month SMALLINT NOT NULL,
+      year SMALLINT NOT NULL,
+      weekday SMALLINT NOT NULL
    )
    sortkey(year, month, day);
    """
