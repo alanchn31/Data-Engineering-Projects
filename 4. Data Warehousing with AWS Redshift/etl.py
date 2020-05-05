@@ -1,6 +1,7 @@
 import configparser
 import psycopg2
-from sql_queries import copy_table_queries, insert_table_queries
+from sql_queries import copy_table_queries, insert_table_queries, copy_staging_order
+                        count_staging_queries, insert_table_order, count_fact_dim_queries
 
 
 def load_staging_tables(cur, conn):
@@ -14,9 +15,11 @@ def load_staging_tables(cur, conn):
     Returns:
         None
     """
-    for query in copy_table_queries:
+    for idx, query in enumerate(copy_table_queries):
         cur.execute(query)
         conn.commit()
+        row = cur.execute(count_staging_queries[idx])
+        print('No. of rows copied into {}: {}'.format(copy_staging_order[idx], row.count))
 
 
 def insert_tables(cur, conn):
@@ -31,9 +34,11 @@ def insert_tables(cur, conn):
     Returns:
         None
     """
-    for query in insert_table_queries:
+    for idx, query in enumerate(insert_table_queries):
         cur.execute(query)
         conn.commit()
+        row = cur.execute(count_fact_dim_queries[idx])
+        print('No. of rows inserted into {}: {}'.format(insert_table_order[idx], row.count))
 
 
 def main():
