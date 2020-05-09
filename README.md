@@ -17,3 +17,10 @@
 
 3. Web Scrapying using Scrapy, MongoDB ETL
 * In storing semi-structured data, one form to store it in, is in the form of documents. MongoDB makes this possible, with a specific collection containing related documents. Each document contains fields of data which can be queried. In this project, data is scraped from a books listing website using Scrapy. The fields of each book, such as price of a book, ratings, whether it is available is stored in a document in the books collection in MongoDB.
+
+4. Data Warehousing with AWS Redshift
+* This project creates a data warehouse, in AWS Redshift. A data warehouse provides a reliable and consistent foundation for users to query and answer some business questions based on requirements.
+
+5. Data Lake with Spark & AWS S3
+* This project creates a data lake, in AWS S3 using Spark. 
+* Why create a data lake? A data lake provides a reliable store for large amounts of data, from unstructured to semi-structured and even structured data. In this project, we ingest json files, denormalize them into fact and dimension tables and upload them into a AWS S3 data lake, in the form of parquet files.
