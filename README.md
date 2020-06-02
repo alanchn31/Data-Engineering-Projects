@@ -1,11 +1,7 @@
 ## Description
+---
 * This repo contains projects done which applies principles in data engineering. 
-
-* Why did I want to learn more about data engineering?
-    * Data Engineering plays a crucial role in the data       hierarchy of needs. It is the foundation and lifeblood for a business to conduct analytics in answering business questions and formulating strategies. 
-<img src="https://miro.medium.com/max/788/0*Vj5UkvA8K4Vf02_X.jpg" width="1200">
-
-* The ideal scenario is to marry data engineering and analytics, to formulate efficient and accurate queries to address business use cases
+* Notes taken during the course can be found in folder `0. Back to Basics`
 
 ## Projects
 ---
