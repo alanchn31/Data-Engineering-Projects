@@ -3,7 +3,7 @@
 
 * Why did I want to learn more about data engineering?
     * Data Engineering plays a crucial role in the data       hierarchy of needs. It is the foundation and lifeblood for a business to conduct analytics in answering business questions and formulating strategies. 
-![Data Hierarchy of Needs](https://miro.medium.com/max/788/0*Vj5UkvA8K4Vf02_X.jpg)
+<img src="https://miro.medium.com/max/788/0*Vj5UkvA8K4Vf02_X.jpg" width="1200">
 
 * The ideal scenario is to marry data engineering and analytics, to formulate efficient and accurate queries to address business use cases
 
