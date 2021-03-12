@@ -2,7 +2,7 @@ attrs==19.3.0
 Automat==20.2.0
 cffi==1.14.0
 constantly==15.1.0
-cryptography==3.2
+cryptography==3.3.2
 cssselect==1.1.0
 hyperlink==19.0.0
 idna==2.9
