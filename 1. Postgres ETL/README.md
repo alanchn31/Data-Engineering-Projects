@@ -5,7 +5,7 @@ This repo provides the ETL pipeline, to populate the sparkifydb database.
 
 * This source of data will be useful in helping Sparkify reach some of its analytical goals, for example, finding out songs that have highest popularity or times of the day which is high in traffic.
 
-## Database Design and ETL Pipeline
+## Database Design and ETL Pipeline Schema for Song Play Analysis
 ---
 * For the schema design, the STAR schema is used as it simplifies queries and provides fast aggregations of data.
 
